@@ -1,0 +1,9 @@
+import React from 'react'
+
+function PCPage() {
+  return (
+    <div>PCPage</div>
+  )
+}
+
+export default PCPage
