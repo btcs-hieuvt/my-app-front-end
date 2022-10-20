@@ -5,7 +5,9 @@ import ConsolePage from './page/Console'
 import HomePage from './page/Home'
 import LifestylePage from './page/Lifestyle'
 import MobilePage from './page/Mobile'
+import Page404 from './page/Page404'
 import PCPage from './page/pc'
+import SearchPage from './page/Search'
 import StorePage from './page/Store'
 import SupportPage from './page/Support'
 
@@ -15,13 +17,15 @@ function App() {
       <Routes>
         <Route path="/" element={<DefaultLayout />}>
           <Route index element={<HomePage />} />
-          <Route path="/store" element={<StorePage />} />
-          <Route path="/pc" element={<PCPage />} />
-          <Route path="/console" element={<ConsolePage />} />
-          <Route path="/mobile" element={<MobilePage />} />
-          <Route path="/lifestyle" element={<LifestylePage />} />
-          <Route path="/community" element={<CommunityPage />} />
-          <Route path="/support" element={<SupportPage />} />
+          <Route path="store" element={<StorePage />} />
+          <Route path="pc" element={<PCPage />} />
+          <Route path="console" element={<ConsolePage />} />
+          <Route path="mobile" element={<MobilePage />} />
+          <Route path="lifestyle" element={<LifestylePage />} />
+          <Route path="community" element={<CommunityPage />} />
+          <Route path="support" element={<SupportPage />} />
+          <Route path="search/:slug" element={<SearchPage />} />
+          <Route path="*" element={<Page404 />} />
         </Route>
       </Routes>
     </>

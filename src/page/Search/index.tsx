@@ -1,7 +1,8 @@
-import React from 'react'
+import { useParams } from 'react-router-dom'
 
 function SearchPage() {
-  return <div>SearchPage</div>
+  const { slug } = useParams()
+  return <div>SearchPage result for "{slug}"</div>
 }
 
 export default SearchPage
