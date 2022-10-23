@@ -9,7 +9,7 @@ function Header() {
   const location = useLocation()
 
   return (
-    <header className="w-full min-h-[60px] px-24 flex  items-center bg-black text-[#888888] font-['Helvetica'] border-b-[2px] border-b-[#44d62c]">
+    <header className="w-full min-h-[60px] fixed top-0 left-0 right-0 px-24 flex  items-center bg-black text-[#888888] font-['Helvetica'] border-b-[2px] border-b-[#44d62c]">
       <div className="w-[1200px] mx-auto flex  items-center justify-between text-condensed tracking-wide">
         <Link to={ROUTES.HOME} className="w-9 h-9">
           <img src={LOGO_URL} alt="Logo" className="w-9 h-9" />
