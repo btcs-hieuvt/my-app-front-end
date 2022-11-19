@@ -1,10 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import CommonSlider from '../../components/slider/CommonSlider'
-import { CATEGORY } from '../../types'
+import { CATEGORY, PRODUCT } from '../../types'
 import { Categorys } from '../../dummyData/dummyCategory'
 import { dataDummy } from '../../dummyData/dummyCarousel'
+import ProductSlider from '../../components/slider/ProductSlider'
+import productApi from '../../api/productApi'
 
 function StorePage() {
+  const [productLatest, setProductLatest] = useState<PRODUCT[]>()
+  useEffect(() => {
+    const getAllProduct = async () => {
+      const response = await productApi.getAll()
+      const newProducts = response.map((item: PRODUCT) => {
+        if (item?.createdAt) {
+          return {
+            ...item,
+            createdAt: Number(new Date(item?.createdAt)),
+          }
+        }
+      })
+
+      setProductLatest(response)
+    }
+    getAllProduct()
+  }, [setProductLatest])
   return (
     <div className="mt-[60px]">
       {/* category */}
@@ -25,6 +44,9 @@ function StorePage() {
         </div>
         <div className="pt-10 mb-6">
           <CommonSlider dataCarousel={dataDummy} />
+        </div>
+        <div className="w-[1232px] mx-auto">
+          <ProductSlider productLatest={productLatest} />
         </div>
       </div>
     </div>
