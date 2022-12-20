@@ -9,4 +9,7 @@ export const ROUTES = {
   LIFESTYLE: '/lifestyle',
   COMMUNITY: '/community',
   SUPPORT: '/support',
+  CART: '/cart',
 }
+
+export const ITEMPERPAGE = 4

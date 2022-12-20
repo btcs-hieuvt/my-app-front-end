@@ -1,7 +1,8 @@
 export type CATEGORY = {
-  id: number
-  title: string
-  image_url: string
+  _id: number
+  categoryName: string
+  image: string
+  products?: string[]
 }
 
 export type CAROUSEL = {

@@ -1,7 +1,7 @@
 import { SIZE } from '../../enum'
 
 interface Props {
-  title: string
+  title?: string
   description: string
   img: string
   textSize?: SIZE
@@ -24,7 +24,9 @@ pt-12 tracking-wide font-semibold text-center w-[80%]`}
             {title}
           </h1>
           <p
-            className={`${textSize === SIZE.BIG && 'text-[1.75rem]'} ${textSize === SIZE.MEDIUM && 'text-[1.313rem]'}`}
+            className={`text-center w-[70%] mx-auto ${textSize === SIZE.BIG && 'text-[1.75rem]'} ${
+              textSize === SIZE.MEDIUM && 'text-[1.313rem]'
+            }`}
           >
             {description}
           </p>

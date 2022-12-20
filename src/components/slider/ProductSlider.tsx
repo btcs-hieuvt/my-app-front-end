@@ -3,6 +3,7 @@ import CardProduct from '../card/CardProduct'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { PRODUCT } from '../../types'
+import { Link } from 'react-router-dom'
 
 interface Props {
   productLatest: PRODUCT[] | undefined
@@ -19,7 +20,7 @@ function ProductSlider(props: Props) {
     <div className="w-full mx">
       <Slider {...setting}>
         {productLatest?.map((item) => (
-          <CardProduct product={item} />
+          <CardProduct key={item._id} product={item} />
         ))}
       </Slider>
     </div>
