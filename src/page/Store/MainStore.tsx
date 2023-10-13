@@ -10,7 +10,7 @@ function MainStore() {
   const [productLatest, setProductLatest] = useState<PRODUCT[]>()
   const allProduct = useRecoilValue(AllProduct)
   useEffect(() => {
-    setProductLatest(allProduct.slice(-8))
+    setProductLatest(allProduct)
   }, [allProduct, setProductLatest])
   return (
     <>

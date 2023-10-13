@@ -5,12 +5,15 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { RecoilRoot } from 'recoil'
 import { BrowserRouter } from 'react-router-dom'
+import SearchContextProvider from './context/searchContext'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <RecoilRoot>
     <BrowserRouter>
-      <App />
+      <SearchContextProvider>
+        <App />
+      </SearchContextProvider>
     </BrowserRouter>
   </RecoilRoot>,
 )

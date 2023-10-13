@@ -11,8 +11,8 @@ const itemsPerPage = ITEMPERPAGE
 function Keyboard() {
   const listKeyboard = useRecoilValue(KEYBOARDS)
   const [productKeyboards, setProductKeyboard] = useState<PRODUCT[]>()
-  const [itemOffset, setItemOffset] = useState(0)
   const [currentItems, setCurrentItems] = useState<PRODUCT[]>()
+  const [itemOffset, setItemOffset] = useState(0)
   const [pageCount, setPageCount] = useState(1)
   useEffect(() => {
     let keyboards: PRODUCT[] = []
